@@ -12,14 +12,15 @@ public class LoadSceneManager : MonoBehaviour
     {
         current = this;
         SceneManager.LoadSceneAsync((int)SceneIndexes.MAIN_MENU, LoadSceneMode.Additive);
+        GameEvents.current.onGameStart += startGame;
     }
-
-    public event Action onStartGame;
-    public static void startGame()
+    
+    public void startGame()
     {
+        SceneManager.UnloadSceneAsync((int)SceneIndexes.MAIN_MENU);
         SceneManager.LoadSceneAsync((int)SceneIndexes.SCRAP_LEVEL, LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync((int)SceneIndexes.HUD, LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync((int)SceneIndexes.MAIN_MENU);
+        
     }
 
     public void loadScene(String sceneName)

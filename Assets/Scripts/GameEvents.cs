@@ -18,4 +18,11 @@ public class GameEvents : MonoBehaviour
     {
         if (onScrapTriggerEnter != null) onScrapTriggerEnter();
     }
+    
+    public event Action onGameStart;
+
+    public void gameStart()
+    {
+        if (onGameStart != null) onGameStart();
+    }
 }
