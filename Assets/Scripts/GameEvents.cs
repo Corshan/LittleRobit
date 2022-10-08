@@ -25,4 +25,11 @@ public class GameEvents : MonoBehaviour
     {
         if (onGameStart != null) onGameStart();
     }
+
+    public event Action<int> onLevelChange;
+
+    public void levelChange(int level)
+    {
+        if (onLevelChange != null) onLevelChange(level);
+    }
 }
