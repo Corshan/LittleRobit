@@ -20,13 +20,19 @@ public class GrapplingGun : MonoBehaviour
     [SerializeField] private Transform player;
     
     [Header("RayCast Settings")]
+    [Range(1f,200f)]
     [SerializeField] private float maxGrappleDistance = 100f;
 
     [Header("Joint Settings")] 
+    [Range(0f,1f)]
     [SerializeField] private float minDistance = 0.25f;
+    [Range(0f,1f)]
     [SerializeField] private float maxDistance = 0.8f;
+    [Range(0f,10f)]
     [SerializeField] private float spring = 4.5f;
+    [Range(0f,10f)]
     [SerializeField] private float damper = 7f;
+    [Range(0f,10f)]
     [SerializeField] private float massScale = 4.5f;
     // Start is called before the first frame update
     void Start()

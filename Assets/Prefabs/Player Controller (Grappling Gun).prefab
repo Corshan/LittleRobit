@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fa2f6531cfd2daf4fa7af1a002ce242e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -492,8 +492,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3465390315869995019}
-  - component: {fileID: 3465390315869995013}
   - component: {fileID: 3465390315869995018}
+  - component: {fileID: 3465390315869995013}
   m_Layer: 0
   m_Name: Gun Positon
   m_TagString: Untagged
@@ -518,6 +518,30 @@ Transform:
   m_Father: {fileID: 3465390315572115550}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3465390315869995018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3465390315869995016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9371cee2d73daa94b8d9921333e0995f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  gunTip: {fileID: 3465390316795189846}
+  camera: {fileID: 3465390315572115550}
+  player: {fileID: 3465390315541085079}
+  maxGrappleDistance: 100
+  minDistance: 0.25
+  maxDistance: 0.8
+  spring: 4.5
+  damper: 7
+  massScale: 4.5
 --- !u!120 &3465390315869995013
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -617,30 +641,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &3465390315869995018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3465390315869995016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9371cee2d73daa94b8d9921333e0995f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  gunTip: {fileID: 3465390316795189846}
-  camera: {fileID: 3465390315572115550}
-  player: {fileID: 3465390315541085079}
-  maxGrappleDistance: 100
-  minDistance: 0.25
-  maxDistance: 0.8
-  spring: 4.5
-  damper: 7
-  massScale: 4.5
 --- !u!1 &3465390316170039743
 GameObject:
   m_ObjectHideFlags: 0
