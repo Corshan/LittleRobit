@@ -527,4 +527,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientaion: {fileID: 7576020165532967009}
-  mouseSensitivity: 5.01
+  _playerSettings: {fileID: 11400000, guid: 9a23a34754bb9484aa8e8edaed247054, type: 2}

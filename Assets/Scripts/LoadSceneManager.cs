@@ -32,6 +32,7 @@ public class LoadSceneManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(currentSceneIndex);
         if (Testing) SceneManager.LoadSceneAsync((int)SceneIndexes.MANAGER);
         SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(level));
         currentSceneIndex = level;
     }
 }

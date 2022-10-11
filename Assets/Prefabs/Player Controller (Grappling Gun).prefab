@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientaion: {fileID: 3465390315451720190}
-  mouseSensitivity: 5.01
+  _playerSettings: {fileID: 11400000, guid: 9a23a34754bb9484aa8e8edaed247054, type: 2}
 --- !u!1 &3465390315825137164
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +538,7 @@ MonoBehaviour:
   player: {fileID: 3465390315541085079}
   maxGrappleDistance: 100
   minDistance: 0.25
-  maxDistance: 0.8
+  maxDistance: 0.432
   spring: 4.5
   damper: 7
   massScale: 4.5

@@ -7,10 +7,15 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")] 
+    [Range(0f,20f)]
     [SerializeField] private float moveSpeed;
+    [Range(0f,20f)]
     [SerializeField] private float groundDrag;
+    [Range(0f,20f)]
     [SerializeField] private float jumpForce;
+    [Range(0f,20f)]
     [SerializeField] private float jumpCoolDown;
+    [Range(0f,20f)]
     [SerializeField] private float airMultiplier;
     private bool readyToJump;
 

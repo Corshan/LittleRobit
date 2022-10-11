@@ -7,8 +7,9 @@ using UnityEngine.InputSystem;
 public class CameraLook : MonoBehaviour
 {
     [SerializeField] private Transform orientaion;
-    [Range(0f, 10f)]
-    [SerializeField] private float mouseSensitivity = 1f;
+    [SerializeField] private PlayerSettings _playerSettings;
+    
+    private float mouseSensitivity;
     private float mouseX;
     private float mouseY;
 
@@ -27,6 +28,7 @@ public class CameraLook : MonoBehaviour
     void Update()
     {
         Look();
+        mouseSensitivity = _playerSettings.mouseSensitivity;
     }
 
     public void onLook(InputAction.CallbackContext callbackContext)
