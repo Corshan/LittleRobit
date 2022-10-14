@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Player Stats
   m_EditorClassIdentifier: 
   health: 100
-  rescources: 100
+  percentageRescource: 100
+  waitTime: 3
+  decayRate: 3
   scrap: 0

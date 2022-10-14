@@ -12,12 +12,25 @@ public class GameEvents : MonoBehaviour
         current = this;
     }
 
+    #region Gameplay
+    
     public event Action onScrapTriggerEnter;
 
     public void scrapTriggerEnter()
     {
         if (onScrapTriggerEnter != null) onScrapTriggerEnter();
     }
+    
+    public event Action onBatteryDecay;
+
+    public void batteryDecay()
+    {
+        if (onBatteryDecay != null) onBatteryDecay();
+    }
+    
+    #endregion
+
+    #region LevelChange
     
     public event Action onGameStart;
 
@@ -32,4 +45,7 @@ public class GameEvents : MonoBehaviour
     {
         if (onLevelChange != null) onLevelChange(level);
     }
+    
+    #endregion
+    
 }
