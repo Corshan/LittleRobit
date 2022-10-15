@@ -21,11 +21,11 @@ public class GameEvents : MonoBehaviour
         if (onScrapTriggerEnter != null) onScrapTriggerEnter();
     }
     
-    public event Action onBatteryDecay;
+    public event Action onBatteryChange;
 
-    public void batteryDecay()
+    public void batteryChange()
     {
-        if (onBatteryDecay != null) onBatteryDecay();
+        if (onBatteryChange != null) onBatteryChange();
     }
     
     #endregion

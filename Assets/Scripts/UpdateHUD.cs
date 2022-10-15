@@ -14,7 +14,7 @@ public class UpdateHUD : MonoBehaviour
     void Start()
     {
         GameEvents.current.onScrapTriggerEnter += updateScore;
-        GameEvents.current.onBatteryDecay += updateBattery;
+        GameEvents.current.onBatteryChange += updateBattery;
         battery.SetText(stats.percentageRescource.ToString());
     }
 

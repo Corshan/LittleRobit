@@ -11,9 +11,13 @@ public class playerStats : ScriptableObject
     [Header("Battery Settings")]
     public int percentageRescource = 100;
     [Range(0.1f,10f)]
-    public float waitTime = 3f;
+    public float decayRate = 3f;
+    [Range(0.1f,10f)]
+    public float chargeRate = 3f;
     [Range(1,10)]
-    public int decayRate = 1;
+    public int decayAmount = 1;
+    [Range(1, 10)] 
+    public int chargeAmount = 1;
     
     [Header("Score")]
     public int scrap = 0;
