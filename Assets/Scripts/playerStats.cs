@@ -22,4 +22,11 @@ public class playerStats : ScriptableObject
     [Header("Score")]
     public int scrap = 0;
 
+    public void resetStats()
+    {
+        percentageRescource = 100;
+        health = 100;
+        scrap = 0;
+    }
+
 }

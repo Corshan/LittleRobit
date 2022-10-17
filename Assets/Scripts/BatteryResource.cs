@@ -45,6 +45,6 @@ public class BatteryResource : MonoBehaviour
             if (stats.percentageRescource > 100) stats.percentageRescource = 100;
             GameEvents.current.batteryChange();
         }
-        
+        GameEvents.current.levelReset();
     }
 }

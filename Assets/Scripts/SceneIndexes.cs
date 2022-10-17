@@ -7,5 +7,6 @@ using System.Collections;
         MAIN_MENU = 2,
         HUD = 1,
         SCRAP_LEVEL = 3,
-        LOADING_BAY = 4
+        LOADING_BAY = 4,
+        END_CREDITS = 5
     }

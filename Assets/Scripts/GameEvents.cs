@@ -39,13 +39,27 @@ public class GameEvents : MonoBehaviour
         if (onGameStart != null) onGameStart();
     }
 
+    public event Action onGameQuit;
+
+    public void gameQuit()
+    {
+        if (onGameQuit != null) onGameQuit();
+    }
+
     public event Action<int> onLevelChange;
 
     public void levelChange(int level)
     {
         if (onLevelChange != null) onLevelChange(level);
     }
-    
+
+    public event Action onLevelReset;
+
+    public void levelReset()
+    {
+        if (onLevelReset != null) onLevelReset();
+    }
+
     #endregion
-    
+
 }

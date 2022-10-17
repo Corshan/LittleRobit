@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Player Stats
   m_EditorClassIdentifier: 
   health: 100
-  percentageRescource: 100
-  decayRate: 1
-  chargeRate: 0.5
+  percentageRescource: 88
+  decayRate: 3
+  chargeRate: 0.2
   decayAmount: 1
   chargeAmount: 1
-  scrap: 0
+  scrap: 3

@@ -8,4 +8,9 @@ public class ButtonEvents : MonoBehaviour
     {
         GameEvents.current.gameStart();
     }
+
+    public void quitGame()
+    {
+        GameEvents.current.gameQuit();
+    }
 }
