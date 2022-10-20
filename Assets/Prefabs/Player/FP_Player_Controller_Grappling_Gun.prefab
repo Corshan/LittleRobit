@@ -712,7 +712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3465390316170039742}
   m_Layer: 0
-  m_Name: Player Controller (Grappling Gun)
+  m_Name: FP_Player_Controller_Grappling_Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
