@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class CameraLook : MonoBehaviour
 {
     [SerializeField] private Transform orientaion;
-    [SerializeField] private PlayerSettings _playerSettings;
+    //[SerializeField] private PlayerSettings _playerSettings;
     
     private float mouseSensitivity;
     private float mouseX;
