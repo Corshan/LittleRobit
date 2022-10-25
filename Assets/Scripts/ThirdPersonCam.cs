@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,15 +15,18 @@ public class ThirdPersonCam : MonoBehaviour
     [SerializeField] private Transform lookAt;
 
     [Header("Settings")] 
-    [SerializeField] private PlayerSettings stats;
+    [SerializeField] private playerStats stats;
     
     private float horizontalInput;
     private float verticalInput;
+
+    private CinemachineFreeLook camera;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        camera = GetComponent<CinemachineFreeLook>();
     }
 
     // Update is called once per frame
@@ -41,6 +45,9 @@ public class ThirdPersonCam : MonoBehaviour
         orientaion.forward = dir;
 
         playerObj.forward = dir;
+
+        camera.m_XAxis.m_MaxSpeed = stats.mouseSensitivity * 100;
+        camera.m_YAxis.m_MaxSpeed = stats.mouseSensitivity;
     }
     
     public void onMove(InputAction.CallbackContext callbackContext)

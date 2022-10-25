@@ -6,35 +6,42 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement")] 
-    [Range(0f,20f)]
-    [SerializeField] private float moveSpeed;
-    [Range(0f,20f)]
-    [SerializeField] private float groundDrag;
-    [Range(0f,20f)]
-    [SerializeField] private float jumpForce;
-    [Range(0f,20f)]
-    [SerializeField] private float jumpCoolDown;
-    [Range(0f,20f)]
-    [SerializeField] private float airMultiplier;
+
+    private float moveSpeed;
+    
+    private float groundDrag;
+    
+    private float jumpForce;
+    
+    private float jumpCoolDown;
+    
+    private float airMultiplier;
     private bool readyToJump;
 
-    [Header("Ground Check")] 
-    [SerializeField] private float playerHight;
-    [SerializeField] private LayerMask LayerMask;
+    private float playerHight;
+    private LayerMask LayerMask;
     private bool grounded;
-    
 
+    [SerializeField] private playerStats _stats;
     [SerializeField] private Transform orientation;
     [SerializeField] private Rigidbody Rigidbody;
 
     private float horizontalInput;
     private float verticalInput;
     private Vector3 moveDirection;
+    
+    
     // Start is called before the first frame update
     private void Start()
     {
         readyToJump = true;
+        moveSpeed = _stats.moveSpeed;
+        groundDrag = _stats.groundDrag;
+        jumpForce = _stats.jumpForce;
+        jumpCoolDown = _stats.jumpCoolDown;
+        airMultiplier = _stats.airMultiplier;
+        playerHight = _stats.playerHight;
+        LayerMask = _stats.LayerMask;
     }
 
     private void Update()

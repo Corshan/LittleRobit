@@ -1895,6 +1895,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0011763086
       objectReference: {fileID: 0}
+    - target: {fileID: 2834325946339950063, guid: f89ef031b7d53094aabd0fea3201556d, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: bf05dc891f6729c4f973bff56ecb4001, type: 2}
     - target: {fileID: 5706728297356995666, guid: f89ef031b7d53094aabd0fea3201556d, type: 3}
       propertyPath: m_Name
       value: 3rd_person_controller_animated
@@ -1943,7 +1947,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2834325944800841318, guid: f89ef031b7d53094aabd0fea3201556d, type: 3}
+    - {fileID: 2834325944800841320, guid: f89ef031b7d53094aabd0fea3201556d, type: 3}
+    - {fileID: 2834325944800841319, guid: f89ef031b7d53094aabd0fea3201556d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f89ef031b7d53094aabd0fea3201556d, type: 3}
 --- !u!1001 &8684828288474837113
 PrefabInstance:

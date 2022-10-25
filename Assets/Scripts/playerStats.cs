@@ -5,10 +5,30 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/PlayerStats")]
 public class playerStats : ScriptableObject
 {
-    [Header("Health Settings")]
-    public int health = 100;
+    [Header("Movement")] 
+    [Range(0f,20f)]
+    public float moveSpeed;
+    [Range(0f,20f)]
+    public float groundDrag;
+    [Range(0f,20f)]
+    public float jumpForce;
+    [Range(0f,20f)]
+    public float jumpCoolDown;
+    [Range(0f,20f)]
+    public float airMultiplier;
+    private bool readyToJump;
 
-    [Header("Battery Settings")]
+    [Header("Ground Check")] 
+    public float playerHight;
+    public LayerMask LayerMask;
+    [Space(30)]
+    
+    [Header("Health")]
+    public int currentHealth = 100;
+    public int maxHealth = 100;
+
+    [Space(30)]
+    [Header("Battery")]
     public int percentageRescource = 100;
     [Range(0.1f,10f)]
     public float decayRate = 3f;
@@ -19,13 +39,19 @@ public class playerStats : ScriptableObject
     [Range(1, 10)] 
     public int chargeAmount = 1;
     
+    [Space(30)]
     [Header("Score")]
     public int scrap = 0;
+    
+    [Space(30)]
+    [Header("Settings")] 
+    [Range(1f,10f)]
+    public float mouseSensitivity = 3f;
 
     public void resetStats()
     {
         percentageRescource = 100;
-        health = 100;
+        currentHealth = 100;
         scrap = 0;
     }
 

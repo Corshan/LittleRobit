@@ -28,7 +28,7 @@ public class CameraLook : MonoBehaviour
     void Update()
     {
         Look();
-        mouseSensitivity = _playerSettings.mouseSensitivity;
+        //mouseSensitivity = _playerSettings.mouseSensitivity;
     }
 
     public void onLook(InputAction.CallbackContext callbackContext)
