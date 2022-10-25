@@ -11,6 +11,7 @@ public class ThirdPersonCam : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform playerObj;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private Transform lookAt;
 
     [Header("Settings")] 
     [SerializeField] private PlayerSettings stats;
@@ -27,6 +28,7 @@ public class ThirdPersonCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
         orientaion.forward = viewDir.normalized;
 
@@ -34,6 +36,11 @@ public class ThirdPersonCam : MonoBehaviour
 
         if (inputDir != Vector3.zero)
             playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * stats.mouseSensitivity);
+    */
+        Vector3 dir = lookAt.position - new Vector3(transform.position.x, lookAt.position.y, transform.position.z);
+        orientaion.forward = dir;
+
+        playerObj.forward = dir;
     }
     
     public void onMove(InputAction.CallbackContext callbackContext)
