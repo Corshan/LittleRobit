@@ -9,6 +9,7 @@ public class ThirdPersonCam : MonoBehaviour
 {
     [Header("References")] 
     [SerializeField] private Transform orientaion;
+    
     [SerializeField] private Transform player;
     [SerializeField] private Transform playerObj;
     [SerializeField] private Rigidbody rb;

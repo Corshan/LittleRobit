@@ -17,7 +17,9 @@ public class GrapplingGun : MonoBehaviour
     [Header("Tansforms")]
     [SerializeField] private Transform gunTip;
     [SerializeField] private Transform camera;
+    [SerializeField] private Transform orientaion;
     [SerializeField] private Transform player;
+    [SerializeField] private Transform ray;
     
     [Header("RayCast Settings")]
     [Range(1f,200f)]
@@ -44,6 +46,7 @@ public class GrapplingGun : MonoBehaviour
     private void LateUpdate()
     {
         DrawRope();
+        Debug.DrawRay(camera.position, camera.rotation.eulerAngles, Color.black);
     }
 
     public void OnGrapple(InputAction.CallbackContext callbackContext)
@@ -51,10 +54,12 @@ public class GrapplingGun : MonoBehaviour
         if (callbackContext.performed)
         {
             StartGrapple();
+            Debug.Log("Start");
         }
         else
         {
             StopGrapple();
+            Debug.Log("End");
         }
         
     }
@@ -62,7 +67,8 @@ public class GrapplingGun : MonoBehaviour
     private void StartGrapple()
     {
         RaycastHit hit;
-        if (Physics.Raycast(camera.position, camera.forward, out hit, maxGrappleDistance, LayerMask) )
+        
+        if (Physics.Raycast(camera.position, camera.rotation.eulerAngles, out hit, maxGrappleDistance, LayerMask) )
         {
             grappling = true;
             grapplePoint = hit.point;

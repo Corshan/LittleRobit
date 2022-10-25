@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0666fa110c8dc3642869f9c3388a624d, type: 3}
   m_Name: Player Stats
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  groundDrag: 0
-  jumpForce: 0
+  moveSpeed: 7
+  groundDrag: 5
+  jumpForce: 5
   jumpCoolDown: 0
-  airMultiplier: 0
-  playerHight: 0
+  airMultiplier: 1
+  playerHight: 2
   LayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   currentHealth: 100
   maxHealth: 100
   percentageRescource: 100
@@ -28,5 +28,5 @@ MonoBehaviour:
   chargeRate: 0.2
   decayAmount: 1
   chargeAmount: 1
-  scrap: 3
-  mouseSensitivity: 3
+  scrap: 14
+  mouseSensitivity: 2
