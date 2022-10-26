@@ -12,12 +12,6 @@ public class PlayerAnimations : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnMove(InputAction.CallbackContext context)
     {
         if (context.performed)

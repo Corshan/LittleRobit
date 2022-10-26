@@ -18,9 +18,18 @@ MonoBehaviour:
   jumpCoolDown: 0
   airMultiplier: 1
   playerHight: 2
-  LayerMask:
+  groundLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  maxGrappleDistance: 20
+  minDistance: 0.25
+  maxDistance: 0.4
+  spring: 4.5
+  damper: 7
+  massScale: 4.5
+  grappleHookLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
   currentHealth: 100
   maxHealth: 100
   percentageRescource: 100
@@ -28,5 +37,5 @@ MonoBehaviour:
   chargeRate: 0.2
   decayAmount: 1
   chargeAmount: 1
-  scrap: 14
+  scrap: 16
   mouseSensitivity: 2

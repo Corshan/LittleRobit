@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         jumpCoolDown = _stats.jumpCoolDown;
         airMultiplier = _stats.airMultiplier;
         playerHight = _stats.playerHight;
-        LayerMask = _stats.LayerMask;
+        LayerMask = _stats.groundLayerMask;
     }
 
     private void Update()

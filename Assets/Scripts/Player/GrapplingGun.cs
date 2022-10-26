@@ -8,11 +8,9 @@ public class GrapplingGun : MonoBehaviour
 {
     private LineRenderer _lineRenderer;
     private Vector3 grapplePoint;
-    private bool grappling = false;
     private SpringJoint joint;
     
-    [Header("Layer Mask")]
-    [SerializeField] private LayerMask LayerMask;
+    private LayerMask LayerMask;
     
     [Header("Tansforms")]
     [SerializeField] private Transform gunTip;
@@ -20,33 +18,40 @@ public class GrapplingGun : MonoBehaviour
     [SerializeField] private Transform orientaion;
     [SerializeField] private Transform player;
     [SerializeField] private Transform ray;
+    [SerializeField] private playerStats _stats;
+    [SerializeField] private Animator _animator;
     
-    [Header("RayCast Settings")]
-    [Range(1f,200f)]
-    [SerializeField] private float maxGrappleDistance = 100f;
+    
+    
+    private float maxGrappleDistance = 100f;
 
-    [Header("Joint Settings")] 
-    [Range(0f,1f)]
-    [SerializeField] private float minDistance = 0.25f;
-    [Range(0f,1f)]
-    [SerializeField] private float maxDistance = 0.8f;
-    [Range(0f,10f)]
-    [SerializeField] private float spring = 4.5f;
-    [Range(0f,10f)]
-    [SerializeField] private float damper = 7f;
-    [Range(0f,10f)]
-    [SerializeField] private float massScale = 4.5f;
+    private float minDistance = 0.25f;
+    
+    private float maxDistance = 0.8f;
+    
+    private float spring = 4.5f;
+    
+    private float damper = 7f;
+    
+    private float massScale = 4.5f;
     // Start is called before the first frame update
     void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
-        
+        LayerMask = _stats.grappleHookLayerMask;
+        maxGrappleDistance = _stats.maxGrappleDistance;
+        minDistance = _stats.minDistance;
+        maxDistance = _stats.maxDistance;
+        spring = _stats.spring;
+        damper = _stats.damper;
+        massScale = _stats.massScale;
+
     }
     
     private void LateUpdate()
     {
         DrawRope();
-        Debug.DrawRay(camera.position, camera.rotation.eulerAngles, Color.black);
+        Debug.DrawRay(ray.position, camera.forward, Color.black);
     }
 
     public void OnGrapple(InputAction.CallbackContext callbackContext)
@@ -54,12 +59,10 @@ public class GrapplingGun : MonoBehaviour
         if (callbackContext.performed)
         {
             StartGrapple();
-            Debug.Log("Start");
         }
         else
         {
             StopGrapple();
-            Debug.Log("End");
         }
         
     }
@@ -68,9 +71,10 @@ public class GrapplingGun : MonoBehaviour
     {
         RaycastHit hit;
         
-        if (Physics.Raycast(camera.position, camera.rotation.eulerAngles, out hit, maxGrappleDistance, LayerMask) )
+        if (Physics.Raycast(ray.position, camera.forward, out hit, maxGrappleDistance, LayerMask) )
         {
-            grappling = true;
+            _animator.SetBool("Walk_Anim", false);
+            _animator.SetBool("Roll_Anim" , true);
             grapplePoint = hit.point;
             joint = player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
@@ -100,5 +104,6 @@ public class GrapplingGun : MonoBehaviour
     {
         _lineRenderer.positionCount = 0;
         Destroy(joint);
+        _animator.SetBool("Roll_Anim", false);
     }
 }

@@ -16,11 +16,30 @@ public class playerStats : ScriptableObject
     public float jumpCoolDown;
     [Range(0f,20f)]
     public float airMultiplier;
-    private bool readyToJump;
 
     [Header("Ground Check")] 
     public float playerHight;
-    public LayerMask LayerMask;
+    public LayerMask groundLayerMask;
+    [Space(30)]
+    [Header("-----------Grapple Hook------------")]
+    [Header("RayCast Settings")]
+    [Range(1f,200f)]
+    public float maxGrappleDistance = 100f;
+
+    [Header("Joint Settings")] 
+    [Range(0f,1f)]
+     public float minDistance = 0.25f;
+    [Range(0f,1f)]
+     public float maxDistance = 0.8f;
+    [Range(0f,10f)]
+    public float spring = 4.5f;
+    [Range(0f,10f)]
+     public float damper = 7f;
+    [Range(0f,10f)]
+     public float massScale = 4.5f;
+    [Header("Layer Mask")]
+     public LayerMask grappleHookLayerMask;
+    [Header("---------------------------------")]
     [Space(30)]
     
     [Header("Health")]
@@ -44,7 +63,7 @@ public class playerStats : ScriptableObject
     public int scrap = 0;
     
     [Space(30)]
-    [Header("Settings")] 
+    [Header("--------------Settings---------------")] 
     [Range(1f,10f)]
     public float mouseSensitivity = 3f;
 

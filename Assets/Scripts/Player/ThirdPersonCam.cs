@@ -14,6 +14,7 @@ public class ThirdPersonCam : MonoBehaviour
     [SerializeField] private Transform playerObj;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform lookAt;
+    [SerializeField] private Transform rayLook;
 
     [Header("Settings")] 
     [SerializeField] private playerStats stats;
@@ -46,6 +47,7 @@ public class ThirdPersonCam : MonoBehaviour
         orientaion.forward = dir;
 
         playerObj.forward = dir;
+        
 
         camera.m_XAxis.m_MaxSpeed = stats.mouseSensitivity * 100;
         camera.m_YAxis.m_MaxSpeed = stats.mouseSensitivity;
