@@ -52,6 +52,7 @@ MonoBehaviour:
   player: {fileID: 3277346257708039233}
   ray: {fileID: 3277346258142901099}
   _stats: {fileID: 11400000, guid: bf05dc891f6729c4f973bff56ecb4001, type: 2}
+  _animator: {fileID: 3277346257793926280}
 --- !u!120 &8115144585498035364
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -5095,7 +5096,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3277346257944589575}
-  m_LocalRotation: {x: -0.034585133, y: 0.041864276, z: 0.0014500226, w: 0.9985235}
+  m_LocalRotation: {x: -0.034585137, y: 0.041864272, z: 0.0014500224, w: 0.9985235}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5204,7 +5205,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3277346258488620572}
-  m_LocalRotation: {x: -0.070833616, y: 0.04178397, z: 0.0029697823, w: 0.9966082}
+  m_LocalRotation: {x: -0.07083362, y: 0.04178397, z: 0.0029697823, w: 0.9966082}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
