@@ -580,7 +580,7 @@ Animator:
   m_GameObject: {fileID: 259662242}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d63a959b026e25e4a9c611ce5567fabd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2437c11e9542c0d49b715c52d88c9d37, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 273976501}
   - component: {fileID: 273976500}
   m_Layer: 5
-  m_Name: Play Button
+  m_Name: Resume Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -674,9 +674,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonEvents, Assembly-CSharp
-        m_MethodName: startGame
+      - m_Target: {fileID: 279865186}
+        m_TargetAssemblyTypeName: InGameMenu, Assembly-CSharp
+        m_MethodName: unpauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -735,6 +735,7 @@ GameObject:
   - component: {fileID: 279865185}
   - component: {fileID: 279865184}
   - component: {fileID: 279865183}
+  - component: {fileID: 279865186}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -792,6 +793,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &279865186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279865182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd45b39e4b094547ac8093bc624f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 259662248}
+  _audioMixer: {fileID: 24100000, guid: ec33b66d9b72b1241b16ac4a035ca84c, type: 2}
+  _mouseSlider: {fileID: 1798559402}
+  _musicSlider: {fileID: 674520879}
+  _SFXSlider: {fileID: 1341411497}
+  _stats: {fileID: 11400000, guid: bf05dc891f6729c4f973bff56ecb4001, type: 2}
 --- !u!1 &292895846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,8 +1641,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonEvents, Assembly-CSharp
+      - m_Target: {fileID: 279865186}
+        m_TargetAssemblyTypeName: InGameMenu, Assembly-CSharp
         m_MethodName: quitGame
         m_Mode: 1
         m_Arguments:
@@ -2442,8 +2461,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonEvents, Assembly-CSharp
+      - m_Target: {fileID: 279865186}
+        m_TargetAssemblyTypeName: InGameMenu, Assembly-CSharp
         m_MethodName: openSettings
         m_Mode: 1
         m_Arguments:
@@ -2886,8 +2905,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonEvents, Assembly-CSharp
+      - m_Target: {fileID: 279865186}
+        m_TargetAssemblyTypeName: InGameMenu, Assembly-CSharp
         m_MethodName: closeSettings
         m_Mode: 1
         m_Arguments:

@@ -62,4 +62,18 @@ public class GameEvents : MonoBehaviour
 
     #endregion
 
+    public event Action onGamePaused;
+
+    public void GamePaused()
+    {
+        if (onGamePaused != null) onGamePaused();
+    }
+
+    public event Action onGameUnpaused;
+
+    public void GameUnpaused()
+    {
+        if (onGameUnpaused != null) onGameUnpaused();
+    }
+
 }
