@@ -38,6 +38,7 @@ public class BatteryResource : MonoBehaviour
             }
             else
             {
+                
                 stats.percentageRescource -= stats.decayAmount;
                 yield return new WaitForSeconds(stats.decayRate);
             }

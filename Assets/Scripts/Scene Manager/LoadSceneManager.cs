@@ -56,14 +56,21 @@ public class LoadSceneManager : MonoBehaviour
 
     public void pauseGame()
     {
+        if(_gamePaused) return;
         Time.timeScale = 0;
         SceneManager.LoadSceneAsync((int)SceneIndexes.PAUSE_MENU, LoadSceneMode.Additive);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        _gamePaused = true;
     }
 
     public void unpauseGame()
     {
         Time.timeScale = 1;
         SceneManager.UnloadSceneAsync((int)SceneIndexes.PAUSE_MENU);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        _gamePaused = false;
     }
 
     public void quitGame()

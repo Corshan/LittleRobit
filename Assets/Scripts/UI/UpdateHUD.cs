@@ -8,23 +8,23 @@ public class UpdateHUD : MonoBehaviour
 {
     [SerializeField] private playerStats stats;
     [SerializeField] private TextMeshProUGUI scrap;
-    [SerializeField] private TextMeshProUGUI battery;
+    [SerializeField] private Image battery;
     
     // Start is called before the first frame update
     void Start()
     {
         GameEvents.current.onScrapTriggerEnter += updateScore;
         GameEvents.current.onBatteryChange += updateBattery;
-        battery.SetText(stats.percentageRescource.ToString());
     }
 
     public void updateScore()
     {
-        scrap.SetText("" + stats.scrap);
+        
     }
 
     public void updateBattery()
     {
-        battery.SetText(stats.percentageRescource.ToString());
+        Debug.Log(stats.percentageRescource/100f);
+        battery.fillAmount = stats.percentageRescource/100f;
     }
 }

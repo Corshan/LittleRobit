@@ -33,9 +33,9 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   percentageRescource: 100
-  decayRate: 3
+  decayRate: 1
   chargeRate: 0.2
   decayAmount: 1
   chargeAmount: 1
-  scrap: 16
-  mouseSensitivity: 2
+  scrap: 0
+  mouseSensitivity: 3.2733223
