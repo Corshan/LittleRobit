@@ -18,6 +18,7 @@ public class LoadSceneManager : MonoBehaviour
         if (!Testing)
         {
             SceneManager.LoadSceneAsync((int)SceneIndexes.MAIN_MENU, LoadSceneMode.Additive);
+            currentSceneIndex = (int)SceneIndexes.MAIN_MENU;
         }
 
         _gamePaused = false;
@@ -31,7 +32,7 @@ public class LoadSceneManager : MonoBehaviour
     
     public void startGame()
     {
-        SceneManager.UnloadSceneAsync((int)SceneIndexes.MAIN_MENU);
+        SceneManager.UnloadSceneAsync(currentSceneIndex);
         SceneManager.LoadSceneAsync((int)SceneIndexes.SCRAP_LEVEL, LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync((int)SceneIndexes.HUD, LoadSceneMode.Additive);
         stats.resetStats();

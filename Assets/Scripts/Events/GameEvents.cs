@@ -76,6 +76,8 @@ public class GameEvents : MonoBehaviour
 
     #endregion
 
+    #region PauseMenu
+
     public event Action onGamePaused;
 
     public void GamePaused()
@@ -90,4 +92,16 @@ public class GameEvents : MonoBehaviour
         if (onGameUnpaused != null) onGameUnpaused();
     }
 
+    #endregion
+
+    #region HUD
+
+    public event Action onInventoryOpened;
+
+    public void InventoryOpened()
+    {
+        if (onInventoryOpened != null) onInventoryOpened();
+    }
+
+    #endregion
 }

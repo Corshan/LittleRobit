@@ -35,7 +35,7 @@ public class ButtonEvents : MonoBehaviour
 
     public void startGame()
     {
-        GameEvents.current.gameStart();
+        GameEvents.current.levelChange((int)SceneIndexes.INSTRUCTIONS);
     }
 
     public void quitGame()

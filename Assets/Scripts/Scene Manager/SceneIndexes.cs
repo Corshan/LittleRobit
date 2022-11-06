@@ -9,5 +9,6 @@ using System.Collections;
         SCRAP_LEVEL = 3,
         LOADING_BAY = 4,
         END_CREDITS = 5,
-        PAUSE_MENU = 6
+        PAUSE_MENU = 6,
+        INSTRUCTIONS =7
     }
