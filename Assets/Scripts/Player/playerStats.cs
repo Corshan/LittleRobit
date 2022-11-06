@@ -73,6 +73,7 @@ public class playerStats : ScriptableObject
         percentageRescource = 100;
         currentHealth = 100;
         scrap = 0;
+        healthPacks = 0;
     }
 
 }

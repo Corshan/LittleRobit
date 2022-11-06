@@ -42,7 +42,7 @@ public class AIController : MonoBehaviour
         {
             FollowWaypoints();
         }
-        Debug.Log(Vector3.Distance(transform.position, _player.position));
+        //Debug.Log(Vector3.Distance(transform.position, _player.position));
         if (Vector3.Distance(transform.position, _player.position) < 1.3f && !_animator.GetCurrentAnimatorStateInfo(0).IsName("Punching"))
         {
             attackPlayer();
