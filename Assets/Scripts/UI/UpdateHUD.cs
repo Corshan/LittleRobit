@@ -14,12 +14,12 @@ public class UpdateHUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameEvents.current.onScrapTriggerEnter += updateScore;
+        GameEvents.current.onScrapTriggerEnter += updateScrap;
         GameEvents.current.onBatteryChange += updateBattery;
         GameEvents.current.onHealthChange += updateHealth;
     }
 
-    public void updateScore()
+    public void updateScrap()
     {
         
     }

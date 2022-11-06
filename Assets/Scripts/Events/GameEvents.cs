@@ -20,6 +20,13 @@ public class GameEvents : MonoBehaviour
     {
         if (onScrapTriggerEnter != null) onScrapTriggerEnter();
     }
+
+    public event Action onHealthPackTriggerEnter;
+
+    public void healthPackTriggerEnter()
+    {
+        if (onHealthPackTriggerEnter != null) onHealthPackTriggerEnter();
+    }
     
     public event Action onBatteryChange;
 
