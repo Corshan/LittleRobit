@@ -397,15 +397,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3277346257944589577, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.034585137
+      value: -0.034585133
       objectReference: {fileID: 0}
     - target: {fileID: 3277346257944589577, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.041864272
+      value: 0.041864276
       objectReference: {fileID: 0}
     - target: {fileID: 3277346257944589577, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0014500224
+      value: 0.0014500226
       objectReference: {fileID: 0}
     - target: {fileID: 3277346258142901096, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_Layer
@@ -417,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3277346258488620574, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.07083362
+      value: -0.070833616
       objectReference: {fileID: 0}
     - target: {fileID: 3277346258815559890, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_Layer
@@ -3519,6 +3519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI_Guard
       objectReference: {fileID: 0}
+    - target: {fileID: 6368978747979623455, guid: 6c2fff572e6da264db75163b8934ae90, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 11400000, guid: bf05dc891f6729c4f973bff56ecb4001, type: 2}
     - target: {fileID: 6368978747979623455, guid: 6c2fff572e6da264db75163b8934ae90, type: 3}
       propertyPath: _player
       value: 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -15,6 +16,7 @@ public class AIController : MonoBehaviour
     [SerializeField] private float _viewAngle = 30f;
     [SerializeField] private float _sightDistance = 10f;
     [SerializeField] private LayerMask _mask;
+    [SerializeField] private playerStats _stats;
 
     private Transform currentWaypoint;
     private int waypointIndex;
@@ -39,6 +41,11 @@ public class AIController : MonoBehaviour
         else if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Walking"))
         {
             FollowWaypoints();
+        }
+        Debug.Log(Vector3.Distance(transform.position, _player.position));
+        if (Vector3.Distance(transform.position, _player.position) < 1.3f && !_animator.GetCurrentAnimatorStateInfo(0).IsName("Punching"))
+        {
+            attackPlayer();
         }
     }
 
@@ -79,11 +86,11 @@ public class AIController : MonoBehaviour
         float angle = Vector3.Angle(targetDir, transform.forward);
         float distance = Vector3.Distance(_player.position, transform.position);
 
-        Debug.Log(distance);
+        //Debug.Log(distance);
         RaycastHit hit;
         if (angle < _viewAngle && distance < _sightDistance && Physics.Raycast(transform.position, targetDir, out hit, _sightDistance, _mask))
         {
-            Debug.DrawRay(transform.position, targetDir, Color.red);
+            //Debug.DrawRay(transform.position, targetDir, Color.red);
             _animator.SetBool("can_see_player", true);
         }
         else if (!Physics.Raycast(transform.position, targetDir, out hit, _sightDistance-5, _mask))
@@ -95,5 +102,11 @@ public class AIController : MonoBehaviour
     void FollowPlayer()
     {
         _agent.SetDestination(_player.position);
+    }
+
+    void attackPlayer()
+    {
+        _animator.SetBool("attack_anim", true);
+        GameEvents.current.healthChange();
     }
 }

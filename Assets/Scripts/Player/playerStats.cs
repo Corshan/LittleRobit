@@ -59,8 +59,9 @@ public class playerStats : ScriptableObject
     public int chargeAmount = 1;
     
     [Space(30)]
-    [Header("Score")]
+    [Header("Inventory")]
     public int scrap = 0;
+    public int healthPacks = 0;
     
     [Space(30)]
     [Header("--------------Settings---------------")] 

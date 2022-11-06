@@ -30,12 +30,13 @@ MonoBehaviour:
   grappleHookLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  currentHealth: 100
+  currentHealth: 60
   maxHealth: 100
-  percentageRescource: 100
+  percentageRescource: 74
   decayRate: 1
   chargeRate: 0.2
   decayAmount: 1
   chargeAmount: 1
   scrap: 0
+  healthPacks: 0
   mouseSensitivity: 3.2733223

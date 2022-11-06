@@ -27,7 +27,14 @@ public class GameEvents : MonoBehaviour
     {
         if (onBatteryChange != null) onBatteryChange();
     }
-    
+
+    public event Action onHealthChange;
+
+    public void healthChange()
+    {
+        if (onHealthChange != null) onHealthChange();
+    }
+
     #endregion
 
     #region LevelChange
