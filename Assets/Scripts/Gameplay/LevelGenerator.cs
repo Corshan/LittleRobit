@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Gameplay;
 using Unity.AI.Navigation;
 using UnityEngine;
 using Math = UnityEngine.ProBuilder.Math;
@@ -15,6 +16,9 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private List<GameObject> AI;
     [SerializeField] private int size;
     [SerializeField] private int AINum;
+    [SerializeField] private GameObject AISpawner;
+
+    [SerializeField] private DifficultySettings difficulty;
     private GameObject[] waypoints;
 
     private List<GameObject> _list;
@@ -40,13 +44,18 @@ public class LevelGenerator : MonoBehaviour
 
     void spawnAI()
     {
-        for (int i = 0; i < AINum; i++)
+        Instantiate(AISpawner, transform);
+        int numSpawn = (difficulty.currentDifficulty == DifficultyEnum.EASY) ? difficulty.easy.enemies :
+            (difficulty.currentDifficulty == DifficultyEnum.MEDIUM) ? difficulty.medium.enemies :
+            difficulty.hard.enemies;
+        
+        for (int i = 0; i < numSpawn; i++)
         {
             try
             {
                 GameObject gameObject = _list[Mathf.RoundToInt(Random.Range(0, _list.Count))];
                 Transform t = gameObject.transform;
-                Instantiate(AI[Mathf.RoundToInt(Random.Range(0, AI.Count))], new Vector3(t.position.x,t.position.y-5, t.position.z), t.rotation);
+                Instantiate(AI[Mathf.RoundToInt(Random.Range(0, AI.Count))], new Vector3(t.position.x,t.position.y-5, t.position.z), t.rotation,AISpawner.transform);
             }
             catch (Exception e)
             {

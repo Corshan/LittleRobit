@@ -437,15 +437,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3277346257944589577, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.034585133
+      value: -0.034585137
       objectReference: {fileID: 0}
     - target: {fileID: 3277346257944589577, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.041864276
+      value: 0.041864272
       objectReference: {fileID: 0}
     - target: {fileID: 3277346257944589577, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0014500226
+      value: 0.0014500224
       objectReference: {fileID: 0}
     - target: {fileID: 3277346258142901096, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_Layer
@@ -457,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3277346258488620574, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.070833616
+      value: -0.07083362
       objectReference: {fileID: 0}
     - target: {fileID: 3277346258815559890, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_Layer
@@ -475,6 +475,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1163126089}
+    - target: {fileID: 4980042506980175731, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4980042506980175731, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
       propertyPath: m_Name
       value: 3rd_person_controller_animated_grapple_hook

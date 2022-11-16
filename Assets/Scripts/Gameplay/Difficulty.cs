@@ -1,10 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public enum Difficulty
+namespace Gameplay
 {
-    EASY,
-    MEDIUM,
-    HARD
+    [CreateAssetMenu(fileName = "new difficulty", menuName = "ScriptableObjects/Difficulty", order = 0)]
+    public class Difficulty : ScriptableObject
+    {
+        public int enemies;
+        public int healthPacks;
+        public int scrap;
+        public int chargingStations;
+    }
 }

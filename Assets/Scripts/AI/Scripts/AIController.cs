@@ -30,7 +30,7 @@ public class AIController : MonoBehaviour
         _wayPoints = GameObject.FindGameObjectsWithTag("Waypoint");
         currentWaypoint = _wayPoints[Mathf.RoundToInt(Random.Range(0, _wayPoints.Length))].transform;
         waypointIndex = 0;
-        Debug.Log(_wayPoints.Length);
+        //Debug.Log(_wayPoints.Length);
     }
 
     // Update is called once per frame

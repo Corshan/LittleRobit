@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Gameplay;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,13 +16,13 @@ public class SetDifficulty : MonoBehaviour
         
         switch ((int)_slider.value)
         {
-            case (int) Difficulty.EASY:
+            case (int) DifficultyEnum.EASY:
                 _difficulty.SetText("Easy");
                 break;
-            case (int) Difficulty.MEDIUM:
+            case (int) DifficultyEnum.MEDIUM:
                 _difficulty.SetText("Medium");
                 break;
-            case (int) Difficulty.HARD:
+            case (int) DifficultyEnum.HARD:
                 _difficulty.SetText("Hard");
                 break;
         }
