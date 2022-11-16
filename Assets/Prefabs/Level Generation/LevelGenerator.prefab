@@ -48,6 +48,7 @@ MonoBehaviour:
   corner: {fileID: 3846125244499411496, guid: 9c1f2b9258a83b849a8c089d064f7e13, type: 3}
   middle: {fileID: 6054771567179244698, guid: 409fe5c98e3c43b489822d962396adf5, type: 3}
   striaght: {fileID: 8641518043638436519, guid: 02a74472f9e5aca4289653bf1c5612ef, type: 3}
+  chargingStationPrefab: {fileID: 8684828287620449143, guid: 07837765837f2c942a926c751cc9a44f, type: 3}
   walls:
   - {fileID: 4584238479793403877, guid: 114f67ab07d22fd4b8f6c6f4a28c4a2f, type: 3}
   - {fileID: 6179834880321592773, guid: cc07d1676067d7b4598195511779b459, type: 3}
@@ -57,6 +58,8 @@ MonoBehaviour:
   - {fileID: 5248506959702331565, guid: 92d300d33c409de4a8bf3a56ac95a4ee, type: 3}
   size: 5
   AINum: 100
+  AISpawner: {fileID: 6839677242321220130, guid: 807e7fda9614fa747b31d5bc12691599, type: 3}
+  difficulty: {fileID: 11400000, guid: f6dd3bd5f12537e4cb3ad5d526321842, type: 2}
 --- !u!114 &4684733591244283407
 MonoBehaviour:
   m_ObjectHideFlags: 0

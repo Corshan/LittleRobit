@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb95be449704a93a6d9a3db48b359c7, type: 3}
   m_Name: Hard
   m_EditorClassIdentifier: 
-  enemies: 0
+  enemies: 20
   healthPacks: 0
   scrap: 0
-  chargingStations: 0
+  chargingStations: 2

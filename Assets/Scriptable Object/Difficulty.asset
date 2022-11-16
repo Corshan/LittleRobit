@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Difficulty
   m_EditorClassIdentifier: 
   currentDifficulty: 0
-  easy: {fileID: 0}
+  easy: {fileID: 11400000, guid: 5beae1c4d48b7bc4da9636d2b7a06380, type: 2}
+  medium: {fileID: 11400000, guid: f2976262fe7a84f4fa47f2fbbcd81091, type: 2}
+  hard: {fileID: 11400000, guid: ba8a02e635c81cd4cbeb60a57ec0f11c, type: 2}

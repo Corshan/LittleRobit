@@ -12,6 +12,8 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private GameObject corner;
     [SerializeField] private GameObject middle;
     [SerializeField] private GameObject striaght;
+    [SerializeField] private GameObject chargingStationPrefab;
+    [SerializeField] private GameObject playerPrefab;
     [SerializeField] private List<GameObject> walls;
     [SerializeField] private List<GameObject> AI;
     [SerializeField] private int size;
@@ -19,8 +21,8 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private GameObject AISpawner;
 
     [SerializeField] private DifficultySettings difficulty;
-    private GameObject[] waypoints;
 
+    private GameObject[] chargingStation;
     private List<GameObject> _list;
     private NavMeshSurface _surface;
 
@@ -29,8 +31,10 @@ public class LevelGenerator : MonoBehaviour
     {
         _list = new List<GameObject>();
         generateLevel();
-        //waypoints = GameObject.FindGameObjectsWithTag("Waypoints");
+        chargingStation = GameObject.FindGameObjectsWithTag("Charging Station");
+        Debug.Log(chargingStation.Length);
         spawnAI();
+        spawnChargingStations();
         
         _surface = GetComponent<NavMeshSurface>();
         _surface.BuildNavMesh();
@@ -40,6 +44,31 @@ public class LevelGenerator : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void spawnChargingStations()
+    {
+            int numSpawn = (difficulty.currentDifficulty == DifficultyEnum.EASY) ? difficulty.easy.chargingStations :
+                (difficulty.currentDifficulty == DifficultyEnum.MEDIUM) ? difficulty.medium.chargingStations :
+                difficulty.hard.chargingStations;
+
+            List<GameObject> spawned = new List<GameObject>();
+
+            int i = 0;
+        while (i != numSpawn)
+        {
+            GameObject gameObject = chargingStation[Mathf.RoundToInt(Random.Range(0, chargingStation.Length))];
+            Debug.Log(i);
+            if (!spawned.Contains(gameObject))
+            {
+                spawned.Add(gameObject);
+                Transform t = gameObject.transform;
+                Vector3 pose = new Vector3(t.position.x + Random.Range(0, 5), t.position.y,
+                    t.position.z + Random.Range(0, 5));
+                Instantiate(chargingStationPrefab, pose, t.rotation);
+                i++;
+            }
+        }
     }
 
     void spawnAI()
