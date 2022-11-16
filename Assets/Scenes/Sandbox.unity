@@ -2078,22 +2078,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelGenerator
       objectReference: {fileID: 0}
-    - target: {fileID: 4684733591244283405, guid: c71ffed49e9d3fe4e934dc1d3330405f, type: 3}
-      propertyPath: size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4684733591244283405, guid: c71ffed49e9d3fe4e934dc1d3330405f, type: 3}
-      propertyPath: AISpawner
-      value: 
-      objectReference: {fileID: 6839677242321220130, guid: 807e7fda9614fa747b31d5bc12691599, type: 3}
-    - target: {fileID: 4684733591244283405, guid: c71ffed49e9d3fe4e934dc1d3330405f, type: 3}
-      propertyPath: difficulty
-      value: 
-      objectReference: {fileID: 11400000, guid: f6dd3bd5f12537e4cb3ad5d526321842, type: 2}
-    - target: {fileID: 4684733591244283405, guid: c71ffed49e9d3fe4e934dc1d3330405f, type: 3}
-      propertyPath: chargingStationPrefab
-      value: 
-      objectReference: {fileID: 8684828287620449143, guid: 07837765837f2c942a926c751cc9a44f, type: 3}
     - target: {fileID: 4684733591244283406, guid: c71ffed49e9d3fe4e934dc1d3330405f, type: 3}
       propertyPath: m_RootOrder
       value: 7
