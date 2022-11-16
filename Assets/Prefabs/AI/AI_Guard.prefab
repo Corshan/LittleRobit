@@ -59,9 +59,16 @@ MonoBehaviour:
   _wayPoints:
   - {fileID: 0}
   - {fileID: 0}
+  _player: {fileID: 8610353434984589153, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
   _agent: {fileID: 6368978747979623458}
   _animator: {fileID: 3437825093803197440}
   minDistanceToWaypoint: 2
+  _viewAngle: 30
+  _sightDistance: 10
+  _mask:
+    serializedVersion: 2
+    m_Bits: 256
+  _stats: {fileID: 11400000, guid: bf05dc891f6729c4f973bff56ecb4001, type: 2}
 --- !u!136 &6368978747979623457
 CapsuleCollider:
   m_ObjectHideFlags: 0

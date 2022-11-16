@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Charging Station
+  - Waypoint
   layers:
   - Default
   - TransparentFX

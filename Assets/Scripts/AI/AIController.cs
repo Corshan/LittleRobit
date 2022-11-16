@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Unity.AI.Navigation;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
@@ -8,11 +9,11 @@ using UnityEngine.AI;
 
 public class AIController : MonoBehaviour
 {
-    [SerializeField] private List<Transform> _wayPoints;
+    [SerializeField] private GameObject[] _wayPoints;
     [SerializeField] private Transform _player;
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private Animator _animator;
-    [SerializeField] private float minDistanceToWaypoint = 2f;
+    [SerializeField] private float minDistanceToWaypoint = 3f;
     [SerializeField] private float _viewAngle = 30f;
     [SerializeField] private float _sightDistance = 10f;
     [SerializeField] private LayerMask _mask;
@@ -26,8 +27,10 @@ public class AIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentWaypoint = _wayPoints[0];
+        _wayPoints = GameObject.FindGameObjectsWithTag("Waypoint");
+        currentWaypoint = _wayPoints[Mathf.RoundToInt(Random.Range(0, _wayPoints.Length))].transform;
         waypointIndex = 0;
+        Debug.Log(_wayPoints.Length);
     }
 
     // Update is called once per frame
@@ -52,22 +55,19 @@ public class AIController : MonoBehaviour
     void FollowWaypoints()
     {
         _animator.SetBool("walk_anim" ,true);
-        _agent.SetDestination(currentWaypoint.position);
+        if (!_agent.SetDestination(currentWaypoint.position))
+        {
+            currentWaypoint = _wayPoints[Mathf.RoundToInt(Random.Range(0, _wayPoints.Length))].transform;
+            _agent.SetDestination(currentWaypoint.position);
+        }
+
+        
 
         float distance = Vector3.Distance(currentWaypoint.position, _agent.gameObject.transform.position);
         if ( distance <= minDistanceToWaypoint )
         {
-            if (waypointIndex >= _wayPoints.Count-1)
-            {
-                waypointIndex = 0;
-            }
-            else
-            {
-                waypointIndex++;
-            }
-
-            currentWaypoint = _wayPoints[waypointIndex];
-            StartCoroutine(wait());
+            currentWaypoint = _wayPoints[Mathf.RoundToInt(Random.Range(0, _wayPoints.Length))].transform;
+            //StartCoroutine(wait());
         }
         //Debug.Log(distance);
     }
