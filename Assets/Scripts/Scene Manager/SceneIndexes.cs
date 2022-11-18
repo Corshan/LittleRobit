@@ -10,5 +10,6 @@ using System.Collections;
         LOADING_BAY = 4,
         END_CREDITS = 5,
         PAUSE_MENU = 6,
-        INSTRUCTIONS =7
+        INSTRUCTIONS =7,
+        LEVEL_GEN = 8
     }

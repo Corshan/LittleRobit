@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 8734283465993817264}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -861,6 +861,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: cae2f5de-518a-4d54-8154-6acfe645cda6
     m_ActionName: Player/Menu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: df40172f-4120-48d3-9c7f-883a699c391b
+    m_ActionName: Player/Inventory[/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -5539,9 +5543,9 @@ GameObject:
   - component: {fileID: 4173703341894875782}
   - component: {fileID: 954824735961283383}
   - component: {fileID: 9109656072952730915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Battery
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

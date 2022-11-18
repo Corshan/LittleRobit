@@ -49,6 +49,9 @@ MonoBehaviour:
   middle: {fileID: 6054771567179244698, guid: 409fe5c98e3c43b489822d962396adf5, type: 3}
   striaght: {fileID: 8641518043638436519, guid: 02a74472f9e5aca4289653bf1c5612ef, type: 3}
   chargingStationPrefab: {fileID: 8684828287620449143, guid: 07837765837f2c942a926c751cc9a44f, type: 3}
+  anchorPointPrefab: {fileID: 8701366680071725243, guid: 095ea2e22f736a04a900c479f89fa54c, type: 3}
+  playerPrefab: {fileID: 4980042506980175731, guid: 98c7efa3dd37e0143be43ab014e59815, type: 3}
+  exitPrefab: {fileID: 4389293605455098886, guid: 0bc8ed8a0dbe44e4393038227b0ed75c, type: 3}
   walls:
   - {fileID: 4584238479793403877, guid: 114f67ab07d22fd4b8f6c6f4a28c4a2f, type: 3}
   - {fileID: 6179834880321592773, guid: cc07d1676067d7b4598195511779b459, type: 3}

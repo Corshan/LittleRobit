@@ -33,10 +33,11 @@ public class LoadSceneManager : MonoBehaviour
     public void startGame()
     {
         SceneManager.UnloadSceneAsync(currentSceneIndex);
-        SceneManager.LoadSceneAsync((int)SceneIndexes.SCRAP_LEVEL, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync((int)SceneIndexes.LEVEL_GEN, LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync((int)SceneIndexes.HUD, LoadSceneMode.Additive);
         stats.resetStats();
-        currentSceneIndex = (int) SceneIndexes.SCRAP_LEVEL;
+        currentSceneIndex = (int) SceneIndexes.LEVEL_GEN;
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex((int)SceneIndexes.LEVEL_GEN));
 
     }
 

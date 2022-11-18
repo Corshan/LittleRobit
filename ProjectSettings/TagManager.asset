@@ -7,6 +7,10 @@ TagManager:
   - CinemachineTarget
   - Charging Station
   - Waypoint
+  - AnchorSpawn
+  - PlayerSpawn
+  - AI
+  - Exit
   layers:
   - Default
   - TransparentFX

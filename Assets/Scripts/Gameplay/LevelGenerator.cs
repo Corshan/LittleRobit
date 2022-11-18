@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Gameplay;
 using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Math = UnityEngine.ProBuilder.Math;
 using Random = UnityEngine.Random;
 
@@ -13,7 +14,9 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private GameObject middle;
     [SerializeField] private GameObject striaght;
     [SerializeField] private GameObject chargingStationPrefab;
+    [SerializeField] private GameObject anchorPointPrefab;
     [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private GameObject exitPrefab;
     [SerializeField] private List<GameObject> walls;
     [SerializeField] private List<GameObject> AI;
     [SerializeField] private int size;
@@ -23,27 +26,54 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private DifficultySettings difficulty;
 
     private GameObject[] chargingStation;
+    private GameObject[] anchorPoints;
+    private GameObject[] playerSpawn;
+    private GameObject[] exits;
     private List<GameObject> _list;
     private NavMeshSurface _surface;
 
     // Start is called before the first frame update
     void Start()
     {
+        size = Mathf.RoundToInt(Random.Range(2, 20));
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex((int)SceneIndexes.LEVEL_GEN));
         _list = new List<GameObject>();
         generateLevel();
         chargingStation = GameObject.FindGameObjectsWithTag("Charging Station");
-        Debug.Log(chargingStation.Length);
+        anchorPoints = GameObject.FindGameObjectsWithTag("AnchorSpawn");
+        playerSpawn = GameObject.FindGameObjectsWithTag("PlayerSpawn");
+        exits = GameObject.FindGameObjectsWithTag("Exit");
+        //Debug.Log(chargingStation.Length);
         spawnAI();
         spawnChargingStations();
-        
+        spawnAnochorPoints();
+        spawnPlayer();
+        spawnExit();
+
         _surface = GetComponent<NavMeshSurface>();
         _surface.BuildNavMesh();
     }
 
-    // Update is called once per frame
-    void Update()
+    void spawnExit()
     {
-        
+        Transform t = exits[Mathf.RoundToInt(Random.Range(0, exits.Length-1))].transform;
+        Instantiate(exitPrefab, t.position, t.rotation);
+    }
+
+    void spawnPlayer()
+    {
+        Transform t = playerSpawn[Mathf.RoundToInt(Random.Range(0, playerSpawn.Length-1))].transform;
+        Instantiate(playerPrefab, t.position, t.rotation);
+    }
+
+    void spawnAnochorPoints()
+    {
+        for (int i = 0; i < 13; i++)
+        {
+            GameObject gb = anchorPoints[Mathf.RoundToInt(Random.Range(0, anchorPoints.Length-1))];
+            Transform t = gb.transform;
+            Instantiate(anchorPointPrefab, t.position, t.rotation);
+        }
     }
 
     void spawnChargingStations()
@@ -57,7 +87,7 @@ public class LevelGenerator : MonoBehaviour
             int i = 0;
         while (i != numSpawn)
         {
-            GameObject gameObject = chargingStation[Mathf.RoundToInt(Random.Range(0, chargingStation.Length))];
+            GameObject gameObject = chargingStation[Mathf.RoundToInt(Random.Range(0, chargingStation.Length-1))];
             Debug.Log(i);
             if (!spawned.Contains(gameObject))
             {
@@ -84,7 +114,7 @@ public class LevelGenerator : MonoBehaviour
             {
                 GameObject gameObject = _list[Mathf.RoundToInt(Random.Range(0, _list.Count))];
                 Transform t = gameObject.transform;
-                Instantiate(AI[Mathf.RoundToInt(Random.Range(0, AI.Count))], new Vector3(t.position.x,t.position.y-5, t.position.z), t.rotation,AISpawner.transform);
+                Instantiate(AI[Mathf.RoundToInt(Random.Range(0, AI.Count))], new Vector3(t.position.x,t.position.y-5, t.position.z), t.rotation);
             }
             catch (Exception e)
             {

@@ -30,12 +30,14 @@ public class AIController : MonoBehaviour
         _wayPoints = GameObject.FindGameObjectsWithTag("Waypoint");
         currentWaypoint = _wayPoints[Mathf.RoundToInt(Random.Range(0, _wayPoints.Length))].transform;
         waypointIndex = 0;
+        _player = GameObject.FindGameObjectWithTag("AI").transform;
         //Debug.Log(_wayPoints.Length);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //_player = GameObject.FindGameObjectWithTag("Player").transform;
         canSeePlayer();
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Running"))
         {
@@ -88,9 +90,9 @@ public class AIController : MonoBehaviour
 
         //Debug.Log(distance);
         RaycastHit hit;
+        Debug.DrawRay(transform.position, targetDir, Color.red);
         if (angle < _viewAngle && distance < _sightDistance && Physics.Raycast(transform.position, targetDir, out hit, _sightDistance, _mask))
         {
-            //Debug.DrawRay(transform.position, targetDir, Color.red);
             _animator.SetBool("can_see_player", true);
         }
         else if (!Physics.Raycast(transform.position, targetDir, out hit, _sightDistance-5, _mask))

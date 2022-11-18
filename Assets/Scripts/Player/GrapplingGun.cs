@@ -37,6 +37,7 @@ public class GrapplingGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        camera = Camera.main.transform;
         _lineRenderer = GetComponent<LineRenderer>();
         LayerMask = _stats.grappleHookLayerMask;
         maxGrappleDistance = _stats.maxGrappleDistance;
@@ -51,7 +52,7 @@ public class GrapplingGun : MonoBehaviour
     private void LateUpdate()
     {
         DrawRope();
-        Debug.DrawRay(ray.position, camera.forward, Color.black);
+        //Debug.DrawRay(ray.position, camera.forward, Color.black);
     }
 
     public void OnGrapple(InputAction.CallbackContext callbackContext)
