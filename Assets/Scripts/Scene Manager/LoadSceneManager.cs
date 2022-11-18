@@ -28,6 +28,7 @@ public class LoadSceneManager : MonoBehaviour
         GameEvents.current.onLevelReset += resetLevel;
         GameEvents.current.onGamePaused += pauseGame;
         GameEvents.current.onGameUnpaused += unpauseGame;
+        GameEvents.current.onDeath += deathScreen;
     }
     
     public void startGame()
@@ -53,7 +54,8 @@ public class LoadSceneManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(currentSceneIndex);
         stats.resetStats();
-        SceneManager.LoadSceneAsync(currentSceneIndex, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync((int) SceneIndexes.LEVEL_GEN, LoadSceneMode.Additive);
+        currentSceneIndex = (int)SceneIndexes.LEVEL_GEN;
     }
 
     public void pauseGame()
@@ -84,5 +86,14 @@ public class LoadSceneManager : MonoBehaviour
     public void quitGame()
     {
         Application.Quit();
+    }
+
+    public void deathScreen()
+    {
+        SceneManager.UnloadSceneAsync(currentSceneIndex);
+        SceneManager.LoadSceneAsync((int)SceneIndexes.DEATH_SCREEN, LoadSceneMode.Additive);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        currentSceneIndex = (int)SceneIndexes.DEATH_SCREEN;
     }
 }

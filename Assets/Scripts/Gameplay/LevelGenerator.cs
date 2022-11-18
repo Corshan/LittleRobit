@@ -88,7 +88,7 @@ public class LevelGenerator : MonoBehaviour
         while (i != numSpawn)
         {
             GameObject gameObject = chargingStation[Mathf.RoundToInt(Random.Range(0, chargingStation.Length-1))];
-            Debug.Log(i);
+            //Debug.Log(i);
             if (!spawned.Contains(gameObject))
             {
                 spawned.Add(gameObject);

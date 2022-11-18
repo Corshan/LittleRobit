@@ -11,5 +11,6 @@ using System.Collections;
         END_CREDITS = 5,
         PAUSE_MENU = 6,
         INSTRUCTIONS =7,
-        LEVEL_GEN = 8
+        LEVEL_GEN = 8,
+        DEATH_SCREEN = 9
     }
