@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         if (grounded) Rigidbody.drag = groundDrag;
         else Rigidbody.drag = 0;
         
-        Debug.Log(_stats.currentHealth);
+        //Debug.Log(_stats.currentHealth);
         if (_stats.currentHealth <= 0)
         {
             GameEvents.current.death();
