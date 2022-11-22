@@ -32,11 +32,11 @@ MonoBehaviour:
     m_Bits: 64
   currentHealth: 100
   maxHealth: 100
-  percentageRescource: 87
-  decayRate: 1
+  percentageRescource: 98
+  decayRate: 1.01
   chargeRate: 0.2
   decayAmount: 1
   chargeAmount: 1
-  scrap: 1
+  scrap: 0
   healthPacks: 0
   mouseSensitivity: 3.2733223

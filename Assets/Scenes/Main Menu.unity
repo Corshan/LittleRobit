@@ -2473,6 +2473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _difficulty: {fileID: 1228089970}
   _slider: {fileID: 1121086149}
+  diff: {fileID: 11400000, guid: f6dd3bd5f12537e4cb3ad5d526321842, type: 2}
 --- !u!114 &1121086149
 MonoBehaviour:
   m_ObjectHideFlags: 0

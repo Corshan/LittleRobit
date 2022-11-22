@@ -42,6 +42,13 @@ public class GameEvents : MonoBehaviour
         if (onHealthChange != null) onHealthChange();
     }
 
+    public event Action onDeath;
+
+    public void death()
+    {
+        if (onDeath != null) onDeath();
+    }
+
     #endregion
 
     #region LevelChange

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8684828287620449128}
   - component: {fileID: 8684828287620449129}
   - component: {fileID: 8684828287620449142}
+  - component: {fileID: 6116385199388655684}
   m_Layer: 7
   m_Name: Charging Station
   m_TagString: Charging Station
@@ -2258,3 +2259,19 @@ CapsuleCollider:
   m_Height: 4.7314577
   m_Direction: 1
   m_Center: {x: 0.63421845, y: 1.1584578, z: -0.5527706}
+--- !u!208 &6116385199388655684
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8684828287620449143}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.4940001, y: 0.142, z: 1.4970001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.634, y: 0.142, z: -0.55300003}
+  m_TimeToStationary: 0.5
